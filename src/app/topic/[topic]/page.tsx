@@ -40,7 +40,7 @@ const Topic = async ({ params: { topic } }: { params: { topic: string } }) => {
       title: topic,
     },
   });
-  console.log(items);
+
   return (
     <div className="p-10">
       <Link href="/">Back </Link>
