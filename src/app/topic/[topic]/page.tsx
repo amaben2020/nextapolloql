@@ -1,6 +1,7 @@
 // get staticParams
 
 import { gql } from "@apollo/client";
+import Link from "next/link";
 import { getClient } from "../../../../lib/client";
 
 const Topic = async ({ params: { topic } }: { params: { topic: string } }) => {
@@ -41,7 +42,8 @@ const Topic = async ({ params: { topic } }: { params: { topic: string } }) => {
   });
   console.log(items);
   return (
-    <div>
+    <div className="p-10">
+      <Link href="/">Back </Link>
       Topic {topic}
       {items.map((item: any) => (
         <>
