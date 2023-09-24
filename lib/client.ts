@@ -20,7 +20,10 @@ export const getClient = () => {
   }
 
   if (!accessToken) {
-    throw new Error(`${cfEnvironment} and  API AccessToken must be provided`);
+    throw new Error(
+      `${cfEnvironment} and  API AccessToken ${process.env
+        .NEXT_PUBLIC_STAGING_CONTENTFUL_ACCESS_TOKEN!} must be provided`,
+    );
   }
 
   const http = new HttpLink({
