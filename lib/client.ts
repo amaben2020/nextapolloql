@@ -14,7 +14,7 @@ export const getClient = () => {
 
   if (cfEnvironment === "master") {
     accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!;
-  } else if (cfEnvironment !== "master") {
+  } else if (cfEnvironment === "staging") {
     // this is for paid customers
     accessToken = process.env.NEXT_PUBLIC_STAGING_CONTENTFUL_ACCESS_TOKEN!;
   }
