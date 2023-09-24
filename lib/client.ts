@@ -11,10 +11,11 @@ export const getClient = () => {
   let accessToken = "";
 
   const cfEnvironment = process.env.CONTENTFUL_BRANCH;
+  const cfEnvironmentStaging = process.env.CONTENTFUL_STAGING_BRANCH;
 
   if (cfEnvironment === "master") {
     accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!;
-  } else if (cfEnvironment === "staging") {
+  } else if (cfEnvironmentStaging === "staging") {
     // this is for paid customers
     accessToken = process.env.NEXT_PUBLIC_STAGING_CONTENTFUL_ACCESS_TOKEN!;
   }
